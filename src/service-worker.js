@@ -5,7 +5,7 @@ import { NetworkFirst, StaleWhileRevalidate } from "workbox-strategies";
 import { registerRoute } from "workbox-routing";
 
 // Define the current version of the application
-const CURRENT_VERSION = "v1";
+const CURRENT_VERSION = 0.1;
 
 // Precache and route all assets defined in the __WB_MANIFEST variable
 precacheAndRoute(self.__WB_MANIFEST);
@@ -30,10 +30,10 @@ self.addEventListener("activate", (event) => {
 async function checkAndNotify() {
   try {
     // Fetch the current version from the server
-    const response = await fetch("/version.json"); // Assuming version is stored in a JSON file
+    const response = await fetch("/meta.json"); // Assuming version is stored in a JSON file
     const data = await response.json();
     const latestVersion = data.version;
-
+    console.log("Version105", latestVersion);
     // Compare the current version with the latest version
     if (latestVersion !== CURRENT_VERSION) {
       // Display a notification to notify the user to reload the page
