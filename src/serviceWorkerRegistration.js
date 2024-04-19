@@ -6,7 +6,7 @@ const register = () => {
 
     wb.addEventListener("installed", (event) => {
       if (event.isUpdate) {
-        if (confirm("New app is available, click to refresh")) {
+        if (window.confirm("New app is available, click to refresh")) {
           window.location.reload();
         }
         // console.log('Service worker installed for the first time');
