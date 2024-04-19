@@ -47,5 +47,12 @@ self.addEventListener("notificationclick", (event) => {
 
   // Add logic here to handle what happens when the user clicks the notification
   // For example, you can open a specific URL
+  if (caches) {
+    // Service worker cache should be cleared with caches.delete()
+    caches.keys().then(function (names) {
+      for (let name of names) caches.delete(name);
+    });
+    console.log("reload from cache buster ....");
+  }
   event.waitUntil(clients.openWindow(process.env.PUBLIC_URL));
 });

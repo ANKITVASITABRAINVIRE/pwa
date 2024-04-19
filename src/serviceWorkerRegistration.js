@@ -5,16 +5,8 @@ const register = () => {
     const wb = new Workbox(`${process.env.PUBLIC_URL}/service-worker.js`);
 
     wb.addEventListener("installed", (event) => {
-      if (event.isUpdate) {
-        if (window.confirm("New app is available, click to refresh")) {
-          caches.keys().then((cacheNames) => {
-            for (let name of cacheNames) {
-              caches.delete(name);
-            }
-          });
-          window.location.reload();
-        }
-        // console.log('Service worker installed for the first time');
+      if (!event.isUpdate) {
+        console.log("Service worker installed for the first time");
       }
     });
 
