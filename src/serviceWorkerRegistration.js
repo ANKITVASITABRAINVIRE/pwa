@@ -15,6 +15,11 @@ const register = () => {
 
     wb.addEventListener("activated", (event) => {
       console.log("Service worker activated");
+      caches.keys().then((cacheNames) => {
+        for (let name of cacheNames) {
+          caches.delete(name);
+        }
+      });
     });
 
     wb.register();
