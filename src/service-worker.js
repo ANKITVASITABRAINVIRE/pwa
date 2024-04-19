@@ -19,20 +19,6 @@ registerRoute(
 registerRoute(/\.(?:js|css|html)$/, new StaleWhileRevalidate());
 
 // Event listener for activating the service worker
-self.addEventListener("activate", (event) => {
-  event.waitUntil(cacheBust());
-});
-
-// Cache busting function
-const cacheBust = async () => {
-  const cache = await caches.open("cache-buster");
-  const keys = await cache.keys();
-  keys.forEach(async (request) => {
-    const url = new URL(request.url);
-    url.searchParams.append("cache-bust", Date.now().toString()); // Append a unique timestamp
-    await cache.put(new Request(url.toString()), await cache.match(request));
-  });
-};
 
 // Listen for a message from the main thread to indicate new changes
 self.addEventListener("message", (event) => {
