@@ -8,6 +8,7 @@ import googleImage1 from "./assets/images/tree-736885_1280.jpg";
 
 import { useEffect, useState } from "react";
 import { getDatabase } from "./config/DatabaseConfig";
+import { Workbox } from "workbox-window";
 
 interface Post {
   userId: number;
@@ -31,6 +32,26 @@ function App() {
         res.json()
       ),
   });
+
+  useEffect(() => {
+    const wb = new Workbox("/service-worker.js");
+
+    wb.addEventListener("waiting", (event: any) => {
+      if (
+        window.confirm(
+          "A new version of the app is available. Reload to update?"
+        )
+      ) {
+        wb.addEventListener("controlling", (event: any) => {
+          window.location.reload();
+        });
+
+        wb.messageSkipWaiting();
+      }
+    });
+
+    wb.register();
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -70,7 +91,7 @@ function App() {
 
   return (
     <div className="main-container">
-      <h1 className="heading">My PWA Appppp</h1>
+      <h1 className="heading">My PWA Appppppppppppppppp</h1>
       <div className="images-static">
         <img src={googleImage} alt="Google" className="google-image" />
         <img src={googleImage1} alt="Google" className="google-image-1" />

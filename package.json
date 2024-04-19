@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -22,7 +22,8 @@
     "workbox-core": "^7.0.0",
     "workbox-precaching": "^7.0.0",
     "workbox-routing": "^7.0.0",
-    "workbox-strategies": "^7.0.0"
+    "workbox-strategies": "^7.0.0",
+    "workbox-window": "^7.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
