@@ -7,6 +7,11 @@ const register = () => {
     wb.addEventListener("installed", (event) => {
       if (event.isUpdate) {
         if (window.confirm("New app is available, click to refresh")) {
+          caches.keys().then((cacheNames) => {
+            for (let name of cacheNames) {
+              caches.delete(name);
+            }
+          });
           window.location.reload();
         }
         // console.log('Service worker installed for the first time');
@@ -15,11 +20,6 @@ const register = () => {
 
     wb.addEventListener("activated", (event) => {
       console.log("Service worker activated");
-      caches.keys().then((cacheNames) => {
-        for (let name of cacheNames) {
-          caches.delete(name);
-        }
-      });
     });
 
     wb.register();
