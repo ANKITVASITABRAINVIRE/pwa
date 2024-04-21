@@ -48,6 +48,37 @@ In conclusion, the journey of crafting PWAs with Create-React-App is both reward
 12). https://developer.chrome.com/docs/workbox/the-ways-of-workbox/#using-a-bundler  
 13). https://developer.chrome.com/docs/workbox/modules/workbox-precaching/
 
+**RxDB?**
+
+RxDB is a NoSQL database designed for JavaScript applications. It's built on top of the popular reactive programming library RxJS, which enables developers to work with asynchronous data streams. RxDB provides a simple and intuitive API for managing data locally, making it ideal for building offline-capable applications.
+
+==> **RxDB with React**
+
+RxDB is a powerful database library that provides reactive, offline-first capabilities for JavaScript applications. It's particularly useful for applications built with React, as it seamlessly integrates with React's component-based architecture. In this guide, we'll explore what RxDB is, its benefits, and how to integrate it into a React project.
+
+**Dexie.js Plugin:**
+
+IndexedDB Wrapper: Dexie.js provides a simple and efficient wrapper for IndexedDB, the browser-based database.
+Simplified API: It offers an easy-to-use API for performing database operations, such as CRUD operations and querying.
+
+**Key Features of RxDB:**
+
+Reactive Data Handling: RxDB allows you to subscribe to changes in your data, so your application can reactively update in response to those changes.
+Offline-First: It supports seamless offline data synchronization, making it perfect for applications that need to work offline or with intermittent connectivity.
+Querying: RxDB provides a powerful querying API that allows you to filter, sort, and manipulate your data with ease.
+Encryption: It offers built-in encryption capabilities to secure sensitive data stored in the database.
+Multi-Platform: RxDB can be used in various JavaScript environments, including browsers, Node.js, and React Native.
+
+**Reference links**
+
+1). https://rxdb.info/quickstart.html
+
+2). https://github.com/pubkey/rxdb
+
+3). https://dexie.org/
+
+4). https://github.com/dexie/Dexie.js
+
 ==> **To set up this project, please follow the steps below.**
 
 1. Clone this repo.
