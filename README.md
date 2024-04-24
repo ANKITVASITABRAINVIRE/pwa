@@ -88,3 +88,14 @@ Multi-Platform: RxDB can be used in various JavaScript environments, including b
 5. For run production build run in local run serve -s build.
 
 --> **Note:- This PWA elements works on only HTTPS server so try to use that.**
+
+
+# Herokuapp deployment steps
+- refernce link: https://www.bacancytechnology.com/blog/deploy-react-app-on-heroku#:~:text=To%20deploy%20React%20app%20on%20Heroku%2C%20we%20need%20to%20add,it%20to%20buildpack%20like%20below.
+- If you face issue with herokuapp-22 stack error, we need to downgrade the herokuapp stack to 20 using `heroku stack:set heroku-20`.
+- Demo site URL: https://pwa-wwa-34415129153b.herokuapp.com/
+
+# Netlify deployment steps
+- Login to netlify web app and flow the process mentioned to create app. 
+- Attached the git repo and select the branch which you need to deployed. 
+- Demo Site URL: https://pwa--legendary-vacherin-e4b3ea.netlify.app/
