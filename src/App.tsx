@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className="main-container">
-      <h1 className="heading"> PWA App with RXDB</h1>
+      <h1 className="heading"> PWA App with RXDB new updated data RXDB</h1>
       <div className="images-static">
         <img src={googleImage} alt="Google" className="google-image" />
         <img src={googleImage1} alt="Google" className="google-image-1" />
